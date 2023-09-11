@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm2yws81d2n6r"]
+
+[ext_resource type="Script" path="res://har mode.gd" id="1_coaxt"]
+
+[node name="hard mode" type="CheckButton"]
+offset_left = 359.0
+offset_top = 228.0
+offset_right = 782.0
+offset_bottom = 321.0
+script = ExtResource("1_coaxt")

@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr06ebc8t8vt"]
+
+[ext_resource type="Script" path="res://tutorial.gd" id="1_1x5g1"]
+[ext_resource type="FontFile" uid="uid://bsyisv3rhljuf" path="res://VT323-Regular.ttf" id="1_x6n2y"]
+[ext_resource type="Texture2D" uid="uid://dkcmrlakljgja" path="res://7yis91se.bmp" id="2_tngf6"]
+
+[sub_resource type="Theme" id="Theme_b0hla"]
+default_font = ExtResource("1_x6n2y")
+default_font_size = 84
+
+[sub_resource type="Animation" id="Animation_6b05h"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["The most unforgiving clicker game"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b3b0c"]
+resource_name = "Tutuorial"
+length = 6.8035
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.7, 4.7, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": ["Welcome To Duengon Clicker", "The most unforgiving clicker game", "Play through 5 levels of grueling 
+Challenges", "Each one harder than the last...", "Hope you enjoy :)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.3, 2.4, 3.2, 3.9, 4.7, 5.7, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3d0o"]
+_data = {
+"RESET": SubResource("Animation_6b05h"),
+"Tutuorial": SubResource("Animation_b3b0c")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_1x5g1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 270.0
+offset_right = 1201.0
+offset_bottom = 491.0
+theme = SubResource("Theme_b0hla")
+text = "The most unforgiving clicker game"
+
+[node name="7Yis91Se" type="Sprite2D" parent="."]
+position = Vector2(642, 340)
+scale = Vector2(1.98237, 2.61967)
+texture = ExtResource("2_tngf6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b3d0o")
+}

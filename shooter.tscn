@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqi41aa4ayt5a"]
+
+[ext_resource type="Script" path="res://shooter.gd" id="1_xel6y"]
+[ext_resource type="Texture2D" uid="uid://q0cca6k0c0i3" path="res://icon.svg" id="2_6l7bm"]
+
+[node name="Shooter" type="Node"]
+script = ExtResource("1_xel6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(603, 301)
+texture = ExtResource("2_6l7bm")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Rotator" type="Node2D" parent="."]
+position = Vector2(602, 303)
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

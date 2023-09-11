@@ -1,0 +1,269 @@
+[gd_scene load_steps=25 format=3 uid="uid://crd2u7p5g15bx"]
+
+[ext_resource type="Texture2D" uid="uid://432xkj355a41" path="res://Start button normal.png" id="1_k2pi8"]
+[ext_resource type="Script" path="res://main_screen.gd" id="1_ts1xa"]
+[ext_resource type="Texture2D" uid="uid://cng0elkgnlt74" path="res://Start button hover.png" id="2_ej2s2"]
+[ext_resource type="Texture2D" uid="uid://cpd4jbxbffi4l" path="res://quit button normal.png" id="3_c0ecu"]
+[ext_resource type="Texture2D" uid="uid://ttiypx3vvpn5" path="res://quit button hover.png" id="4_otd4x"]
+[ext_resource type="Texture2D" uid="uid://5wo576nawrvq" path="res://Credit button normal.png" id="5_8nf0m"]
+[ext_resource type="Texture2D" uid="uid://dvemuxrpt2aqa" path="res://Credit button hover.png" id="6_fy1hp"]
+[ext_resource type="Texture2D" uid="uid://d3ay4kc36o0w5" path="res://Dungeon cliker logo.png" id="7_gdikf"]
+[ext_resource type="Texture2D" uid="uid://rfeihdtwtx4k" path="res://background 2.png" id="8_o5plb"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="8_qj5no"]
+[ext_resource type="AudioStream" uid="uid://ctgyhwo6cw3nu" path="res://some banger music i made.wav" id="11_gn7ak"]
+[ext_resource type="Script" path="res://tutorial.gd" id="12_edvv2"]
+[ext_resource type="FontFile" uid="uid://bsyisv3rhljuf" path="res://VT323-Regular.ttf" id="13_daayh"]
+[ext_resource type="Texture2D" uid="uid://dkcmrlakljgja" path="res://7yis91se.bmp" id="14_k032y"]
+[ext_resource type="FontFile" uid="uid://b4wpj24hereju" path="res://animeace2_bld.ttf" id="15_qq4p4"]
+[ext_resource type="Script" path="res://transition.gd" id="16_xioa7"]
+
+[sub_resource type="Theme" id="Theme_b0hla"]
+default_font = ExtResource("13_daayh")
+default_font_size = 84
+
+[sub_resource type="Animation" id="Animation_6b05h"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["The most unforgiving clicker game"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b3b0c"]
+resource_name = "Tutuorial"
+length = 6.8035
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.7, 4.7, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": ["Welcome To Duengon Clicker", "The most unforgiving clicker game", "Play through 5 levels of grueling 
+Challenges", "Each one harder than the last...", "Hope you enjoy :)"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.3, 2.4, 3.2, 3.9, 4.7, 5.7, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.8035),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3d0o"]
+_data = {
+"RESET": SubResource("Animation_6b05h"),
+"Tutuorial": SubResource("Animation_b3b0c")
+}
+
+[sub_resource type="Theme" id="Theme_fy5dt"]
+default_font = ExtResource("15_qq4p4")
+default_font_size = 0
+
+[sub_resource type="Animation" id="Animation_rpsw4"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.235294, 0, 0.145098, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w63t1"]
+resource_name = "scene change"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.235294, 0, 0.145098, 0), Color(0.235294, 0, 0.145098, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s57kh"]
+_data = {
+"RESET": SubResource("Animation_rpsw4"),
+"scene change": SubResource("Animation_w63t1")
+}
+
+[node name="Main screen" type="Node2D"]
+script = ExtResource("1_ts1xa")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 489.0
+offset_top = 493.0
+offset_right = 693.0
+offset_bottom = 589.0
+texture_normal = ExtResource("1_k2pi8")
+texture_pressed = ExtResource("1_k2pi8")
+texture_hover = ExtResource("2_ej2s2")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 945.0
+offset_top = 497.0
+offset_right = 1154.0
+offset_bottom = 588.0
+texture_normal = ExtResource("3_c0ecu")
+texture_pressed = ExtResource("3_c0ecu")
+texture_hover = ExtResource("4_otd4x")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 6.0
+offset_top = 492.0
+offset_right = 236.0
+offset_bottom = 596.0
+texture_normal = ExtResource("5_8nf0m")
+texture_hover = ExtResource("6_fy1hp")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 343.0
+offset_top = 1.0
+offset_right = 844.0
+offset_bottom = 335.0
+texture = ExtResource("7_gdikf")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("8_qj5no")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1341, 0)
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(597.625, 369)
+scale = Vector2(3.71812, 4.66)
+texture = ExtResource("8_o5plb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_gn7ak")
+volume_db = -4.167
+autoplay = true
+
+[node name="tut" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("12_edvv2")
+
+[node name="Control" type="Control" parent="tut"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="tut/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 270.0
+offset_right = 1201.0
+offset_bottom = 491.0
+theme = SubResource("Theme_b0hla")
+text = "The most unforgiving clicker game"
+
+[node name="7Yis91Se" type="Sprite2D" parent="tut"]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(642, 340)
+scale = Vector2(1.98237, 2.61967)
+texture = ExtResource("14_k032y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="tut"]
+libraries = {
+"": SubResource("AnimationLibrary_b3d0o")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 306.0
+offset_bottom = 33.0
+theme = SubResource("Theme_fy5dt")
+text = "By OreoPlushie_Dev"
+uppercase = true
+
+[node name="transition" type="CanvasLayer" parent="."]
+script = ExtResource("16_xioa7")
+
+[node name="ColorRect" type="ColorRect" parent="transition"]
+modulate = Color(0.235294, 0, 0.145098, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="transition"]
+libraries = {
+"": SubResource("AnimationLibrary_s57kh")
+}
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
